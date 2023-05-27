@@ -8,8 +8,8 @@ n=length (f);
 
 % forward elimination
 for k= 2:n
-factor = e(k)/f(k-1);       % since the position of sub diagonal and diagonal elements are same in array but different in matrix, we need to make sure index of e is always greater than index of g
-f(k) = f(k) - factor*g(k-1);
+factor = e(k)/f(k-1);       % since the number of sub diagonal and diagonal elements are same in array but different in matrix, we need to make sure index of e is always greater than index of g
+f(k) = f(k) - factor*g(k-1);  % explicit removal of sub diagonal vector is not required, we can adjust the values of super, main diagonal and rhs according to effect factor and ignore sub diagonal element
 r(k) = r(k) - factor*r(k-1);
 end
 % back substitution
